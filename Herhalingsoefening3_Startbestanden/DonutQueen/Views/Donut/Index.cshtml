@@ -1,0 +1,54 @@
+﻿@using DonutQueen.ViewModels;
+
+@model OverzichtDonutsViewModel;
+
+@{
+    ViewData["Title"] = "Donuts - Donut Queen";
+}
+
+<section class="b-block b-donuts">
+    <div class="container">
+        <div class="row align-items-center justify-content-between mb-3">
+            <div class="col-auto">
+                <h2>Onze donuts</h2>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <div class="b-donuts__filter">
+                    <form asp-asp-controller="Donut" asp-action="FilterDonuts">
+                        <div class="form__group">
+                            <input asp-for="Zoekterm" type="text" class="form__input me-3" placeholder="Zoekterm" />
+                        </div>
+                        <input type="submit" value="Zoeken" class="btn btn-primary" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row g-3">
+            @if (Model.Donuts.Count > 0)
+            {
+                @foreach (Donut donut in Model.Donuts)
+                {
+                    <div class="col-md-3">
+                        <div class="donut">
+                            <div class="donut__image">
+                                <img src="~/images/@donut.Afbeelding" alt="@donut.Naam" />
+                            </div>
+                            <p class="donut__name">
+                                @donut.Naam
+                            </p>
+                            <p class="donut__description">
+                                @donut.Omschrijving
+                            </p>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>Geen donuts gevonden!</p>
+            }
+        </div>
+    </div>
+</section>

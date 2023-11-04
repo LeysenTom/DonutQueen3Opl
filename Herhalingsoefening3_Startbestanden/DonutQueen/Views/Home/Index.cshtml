@@ -1,0 +1,58 @@
+﻿@using DonutQueen.ViewModels;
+
+@model DonutQueenViewModel;
+
+@{
+    ViewData["Title"] = "Home - Donut Queen";
+}
+
+<section class="b-block b-hero">
+    <div class="b-hero__image">
+        <img src="/images/banner_4.jpg" alt="Hero Image" />
+    </div>
+    <div class="b-hero__content">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2>Donut Queen</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada nunc dolor, eu feugiat nulla volutpat nec.
+                        Maecenas sit amet neque at ex commodo volutpat a in enim. Etiam faucibus ut leo vel pharetra.
+                        Mauris mauris elit, varius non risus quis, tincidunt mattis odio.
+                        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="b-block b-donuts">
+    <div class="container">
+        <div class="row mb-3">
+            <h2>Onze donuts</h2>
+        </div>
+        <div class="row g-3">
+            @foreach (Donut donut in Model.Donuts)
+            {
+                <div class="col-md-3">
+                    <div class="donut">
+                        <div class="donut__image">
+                            <img src="~/images/@donut.Afbeelding" alt="@donut.Naam" />
+                        </div>
+                        <p class="donut__name">
+                            @donut.Naam
+                        </p>
+                        <p class="donut__description">
+                            @donut.Omschrijving
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

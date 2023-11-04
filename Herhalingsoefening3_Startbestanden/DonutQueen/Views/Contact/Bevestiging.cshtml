@@ -1,0 +1,40 @@
+﻿@using DonutQueen.ViewModels
+
+@model ContactViewModel
+
+@{
+    ViewData["Title"] = "Bevestiging";
+}
+
+<section class="b-block b-confirmation">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3>Dag, @Model.Bericht.Voornaam @Model.Bericht.Achternaam!</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>We hebben je bericht goed ontvangen!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>We houden je op de hoogte via je e-mailadres @Model.Bericht.Email.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="b-confirmation__message">
+                    @Model.Bericht.Boodschap
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+

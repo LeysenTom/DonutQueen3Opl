@@ -1,0 +1,424 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+main {
+    position: relative;
+    flex-grow: 1;
+    transition: all 0.25s ease-in-out;
+}
+
+img {
+    vertical-align: middle;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+}
+
+
+/* Header */
+.c-header {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    background-color: #f6f7f9;
+}
+
+.c-header__logo {
+    display: flex;
+    align-items: center;
+    width: 3.75rem;
+}
+
+.c-header__logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.c-header ul {
+    display: flex;
+    align-items: center;
+}
+
+.c-header ul li {
+    margin-right: 2rem;
+}
+
+.c-header ul li:last-child {
+    margin-right: 0;
+}
+
+.c-header ul li a {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #f37ab0;
+}
+
+/* Buttons */
+.btn {
+    font-weight: 400;
+    text-align: center;
+    display: inline-block;
+    padding: .375rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 1.5rem;
+    transition: background-color .25s ease-in-out;
+}
+
+.btn-primary {
+    color: #ffffff;
+    background-color: #f37ab0;
+    border-color: #f37ab0;
+}
+
+
+/* Home Page */
+.b-hero {
+    position: relative;
+    height: 35rem;
+    overflow: hidden;
+}
+
+.b-hero__image {
+    width: 100%;
+}
+
+.b-hero__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.b-hero__content {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
+
+.b-hero__content h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.b-hero__content p {
+    font-weight: 500;
+    width: 50rem;
+    color: #ffffff;
+}
+
+/* Donut Page */
+.b-donuts {
+    /*    background-color: #f2f1f6;*/
+    padding: 2rem 0;
+}
+
+.b-donuts h2 {
+    font-size: 3rem;
+    color: #252525;
+}
+
+.donut {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #f2f1f6;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.donut__image {
+    width: 100%;
+    height: 17.5rem;
+}
+
+.donut__image img {
+    width: 100%;
+    height: 100%;
+    border-radius: .75rem;
+}
+
+.donut__name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: .5rem 0;
+}
+
+.donut__description {
+    padding-bottom: .5rem;
+}
+
+.donut .btn-primary {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+/* Filter */
+.b-donuts__filter form {
+    display: flex;
+    align-items: center;
+}
+
+.b-donuts__filter .form__group {
+    margin: 0;
+}
+
+.b-donuts__filter .form__input {
+    border: 1px solid #dedede;
+    border-radius: 1.5rem;
+}
+
+/* Create Donut */
+.b-donut-create {
+    padding: 2rem 0;
+}
+
+.b-donut-create__form {
+    background-color: #f6f7f9;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+/* Stores Pages */
+.b-stores {
+    /*    background-color: #f2f1f6;*/
+    padding: 2rem 0;
+}
+
+.store {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #f2f1f6;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.store__image {
+    width: 100%;
+    height: 17.5rem;
+}
+
+.store__image img {
+    width: 100%;
+    height: 100%;
+    border-radius: .75rem;
+}
+
+.store__name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: .5rem 0;
+}
+
+.store__street {
+    padding-bottom: .5rem;
+}
+
+.store__place {
+    padding-bottom: .5rem;
+}
+
+.store .btn-primary {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+/* Contact Page */
+.b-contact {
+    padding: 2rem 0;
+}
+
+.b-contact h3 {
+    margin-bottom: 1rem;
+}
+
+.b-contact__form {
+    background-color: #f6f7f9;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.b-confirmation {
+    padding: 2rem 0;
+}
+
+.b-confirmation h3 {
+    margin-bottom: 1rem
+}
+
+.b-confirmation p {
+    margin-bottom: 1rem
+}
+
+.b-confirmation__message {
+    font-style: italic;
+    background-color: #f6f7f9;
+    padding: 1rem;
+}
+
+/* Admin Page */
+.donut__item {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    background-color: #f6f7f9;
+    padding: 1rem;
+    border-radius: .5em
+}
+
+.donut__item > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem
+}
+
+.donut__item > div:last-child {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.donut__item .item__image {
+    height: 100%;
+}
+
+.donut__item .item__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.donut__item .item__name {
+    justify-content: flex-start;
+    width: 12rem
+}
+
+.donut__item .item__actions > div {
+    margin-right: .5rem;
+}
+
+.donut__item .item__actions > div:last-child {
+    margin-right: 0;
+}
+
+.donut__item .item__actions > div .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .75rem;
+    border-radius: .25rem;
+}
+
+.donut__item .item__actions > div .btn svg {
+    width: 1rem;
+    height: 1rem;
+    color: #ffffff;
+}
+/* Footer */
+.c-footer {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    background-color: #f6f7f9;
+}
+
+.c-footer ul {
+    display: flex;
+    align-items: center;
+}
+
+.c-footer ul li {
+    margin-right: .5rem;
+}
+
+.c-footer ul li a {
+    color: #252525;
+}
+
+
+/* Inputs */
+input[type="text"] {
+    padding: .75rem 1rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+input[type="text"]:focus {
+    outline: 1px solid transparent;
+}
+
+textarea {
+    font-family: "Inter", sans-serif;
+    padding: .75rem 1rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+textarea:focus {
+    outline: 1px solid transparent;
+}
+
+.b-contact__form {
+    width: 35rem;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .75rem
+}
+
+.form__label {
+    font-size: .75rem;
+    font-weight: 700;
+    margin-bottom: .25rem;
+}
+
+.form__file {
+    background-color: #ffffff;
+    padding: .75rem 1rem;
+    border-radius: .5rem
+}
+
+.form__file::file-selector-button {
+    color: #ffffff;
+    background-color: #f37ab0;
+    padding: .5rem;
+    border: none;
+    border-radius: .25rem;
+}
+

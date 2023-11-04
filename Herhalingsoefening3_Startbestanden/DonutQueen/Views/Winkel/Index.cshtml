@@ -1,0 +1,40 @@
+﻿@using DonutQueen.ViewModels;
+
+@model DonutQueenViewModel;
+
+@{
+    ViewData["Title"] = "Winkels - Donut Queen";
+}
+
+<section class="b-block b-stores">
+    <div class="container">
+        <div class="row mb-3">
+            <h2>Onze winkels</h2>
+        </div>
+        <div class="row g-3">
+            @foreach (Winkel winkel in Model.Winkels)
+            {
+                <div class="col-md-4">
+                    <div class="store">
+                        <div class=" store__image">
+                            <img src="@winkel.Afbeelding" alt="@winkel.Naam" />
+                        </div>
+                        <p class="store__name">
+                            @winkel.Naam
+                        </p>
+                        <p class="store__street">
+                            @winkel.Straat @winkel.Nummer
+                        </p>
+                        <p class="store__street">
+                            @winkel.Postcode @winkel.Gemeente
+                        </p>
+                        <p class="store__place"></p>
+                        <a asp-asp-controller="Winkel" asp-action="Index" class="btn btn-primary">
+                            Bezoek
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

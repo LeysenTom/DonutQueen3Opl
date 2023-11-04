@@ -1,0 +1,64 @@
+﻿@using DonutQueen.ViewModels.AdminViewModels
+
+@model DonutCreateViewModel
+
+<section class="b-block b-donut-create">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col">
+                <h3>Nieuwe donut</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="b-donut-create__form">
+                    <form asp-controller="Admin" asp-action="Create" method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form__group">
+                            <label asp-for="Naam" class="form__label">Naam*</label>
+                            <input asp-for="Naam" type="text" class="form__control" placeholder="Naam" />
+                        </div>
+                        <div class="form__group">
+                            <label asp-for="Omschrijving" class="form__label">Omschrijving*</label>
+                            <textarea asp-for="Omschrijving" type="text" class="form__control" placeholder="Omschrijving" rows="8"></textarea>
+                        </div>
+                        <div class="form__group">
+                            <label asp-for="Vulling" class="form__label">Vulling</label>
+                            <input asp-for="Vulling" type="text" class="form__control" placeholder="Vulling" />
+                        </div>
+                        <div class="form__group">
+                            <label asp-for="Topping" class="form__label">Topping</label>
+                            <input asp-for="Topping" type="text" class="form__control" placeholder="Topping" />
+                        </div>
+                        <div class="form__group">
+                            <label asp-for="Glazuur" class="form__label">Glazuur</label>
+                            <input asp-for="Glazuur" type="text" class="form__control" placeholder="Glazuur" />
+                        </div>
+                        <div class="form__group">
+                            <label asp-for="IsVegan" class="form__label">Vegan?</label>
+                            <div class="form__check">
+                                <input asp-for="IsVegan" type="radio" value="true" class="form__checkbox" />
+                                <label class="form__label">Ja</label>
+                            </div>
+                            <div class="form__check">
+                                <input asp-for="IsVegan" type="radio" value="false" class="form__checkbox" checked />
+                                <label class="form__label">Nee</label>
+                            </div>
+                        </div>
+                        <div class="form__group">
+                            <input asp-for="Bestand" type="file" class="form__file" />
+                        </div>
+
+                        <input type="submit" class="btn btn-primary" value="Opslaan" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
